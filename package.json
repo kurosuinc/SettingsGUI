@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,5 +13,8 @@
   "devDependencies": {
     "electron": "^2.0.2",
     "foreman": "^3.0.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-scripts": "1.1.4"
   }
 }
