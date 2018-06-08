@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions  from './Redux/action';
 
-class App extends Component {
-  render() {
-    return (
-        <p>Hello!</p>
-    );
-  }
-}
+const App = (props: {}) => (
+    <h1>{'Hello world!'}</h1>
+);
 
-export default App;
+const mapStateToProps = (state: Object): Object => ({
+});
+
+const mapDispatchToProps = (dispatch: Function): Object => ({
+    initApp: bindActionCreators(actions.appActions.requestLoadSchemaFile, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
