@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as actions  from './Redux/action';
+import * as actions from './Redux/action';
 
 type Props = {
     initApp: Function;
