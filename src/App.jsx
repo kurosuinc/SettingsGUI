@@ -4,9 +4,21 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions  from './Redux/action';
 
-const App = (props: {}) => (
-    <h1>{'Hello world!'}</h1>
-);
+type Props = {
+    initApp: Function;
+};
+
+type State = {};
+
+class App extends React.PureComponent<Props, State> {
+    render() {
+        return <h1>{'Hello world!'}</h1>;
+    }
+
+    componentDidMount() {
+        this.props.initApp();
+    }
+}
 
 const mapStateToProps = (state: Object): Object => ({
 });
