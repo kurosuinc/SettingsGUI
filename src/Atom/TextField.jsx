@@ -2,17 +2,10 @@
 import React from 'react';
 import {onlyUpdateForKeys} from 'recompose';
 import _TextField from '@material-ui/core/TextField'
-import type {scheme} from '../types/scheme';
-import type {rule} from '../types/rule';
+import type { field } from '../types/field';
 
 type Props = {
-	fieldData: {
-		key: string,
-		label: string,
-		placeholder: string,
-		description: string,
-		required: boolean,
-	},
+	fieldData: field,
 	content: string | number,
 	error: ?string;
 };
