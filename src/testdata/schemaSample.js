@@ -14,7 +14,7 @@ export default {
 			required: true, // falseの場合は空でも良い
 			rules: [ // Validationルール（複数指定可能）
 				{
-					regex: /[a-zA-Z]*/,
+					regex: '[a-zA-Z]*',
 					error: '半角英字のみが使用できます' // regexにマッチしなかった際のエラー文
 				},
 				{
