@@ -10,9 +10,11 @@ export default (schema: Array<scheme>): Array<Object> => (
             description: item.description,
             required: item.required,
         },
-        rules: {
+        rules: item.rules.map(rule => ({
+            required: item.required,
             type: item.type,
-            regexps: item.rules,
-        },
+            regex: rule.regex,
+            errMessage: rule.errorMessage,
+        }))
     }))
 );
