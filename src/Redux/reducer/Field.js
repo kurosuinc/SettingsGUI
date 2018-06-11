@@ -1,8 +1,9 @@
 // @flow
 import { handleActions } from 'redux-actions';
 import * as types from '../constant';
+import type { field } from '../../types/field';
 
-const initState = {};
+export type State = Array<field>;
 
 const reducer = handleActions({}, initState);
 
