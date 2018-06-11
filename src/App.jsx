@@ -24,7 +24,7 @@ const mapStateToProps = (state: Object): Object => ({
 });
 
 const mapDispatchToProps = (dispatch: Function): Object => ({
-    initApp: bindActionCreators(actions.appActions.requestLoadSchemaFile, dispatch),
+    initApp: bindActionCreators(actions.appActions.requestAppInitialize, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
