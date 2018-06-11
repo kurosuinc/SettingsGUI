@@ -3,7 +3,7 @@ import { createActions } from 'redux-actions';
 import * as types from '../constant';
 
 export const appActions = createActions(
-	types.APP.REQUEST_LOAD_SCHEMA_FILE,
+	types.APP.REQUEST_APP_INITIALIZE,
 	types.FILE.REQUEST_EXPORT_FILE,
 );
 
