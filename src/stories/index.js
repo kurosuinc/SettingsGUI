@@ -1,1 +1,1 @@
-import '../Atom/stories';
+import '../Component/Atom/stories';
