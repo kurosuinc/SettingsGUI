@@ -3,16 +3,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from './Redux/action';
+import * as selectors from './Redux/selector';
+
+import Table from './Component/Organism/Table';
 
 type Props = {
-    initApp: Function;
+    fields: Array<Object>,
+    initApp: Function,
 };
 
 type State = {};
 
 class App extends React.PureComponent<Props, State> {
     render() {
-        return <h1>{'Hello world!'}</h1>;
+        return <Table fields={this.props.fields}/>;
     }
 
     componentDidMount() {
@@ -21,6 +25,7 @@ class App extends React.PureComponent<Props, State> {
 }
 
 const mapStateToProps = (state: Object): Object => ({
+    fields: selectors.fields(state),
 });
 
 const mapDispatchToProps = (dispatch: Function): Object => ({
