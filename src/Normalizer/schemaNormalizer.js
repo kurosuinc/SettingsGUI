@@ -1,7 +1,7 @@
 // @flow
 import type { scheme } from '../types/scheme';
 
-export default (schema: Array<scheme>): Array<Object> => (
+export default (schema: Array<Object>): Array<Object> => (
     schema.map(item => ({
         field: {
             key: item.key,
@@ -14,7 +14,7 @@ export default (schema: Array<scheme>): Array<Object> => (
             required: item.required,
             type: item.type,
             regex: rule.regex,
-            errMessage: rule.errorMessage,
+            errMessage: rule.error,
         }))
     }))
 );
