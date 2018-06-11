@@ -14,7 +14,7 @@ const Table = (props: Props) => (
     <_Table>
         <Header/>
         <_TableBody>
-            {props.fields.map((item, index) => <Row key={index}/>)}
+            {props.fields.map((item, index) => <Row key={index} field={item}/>)}
         </_TableBody>
     </_Table>
 );
