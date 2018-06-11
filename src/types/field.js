@@ -12,3 +12,8 @@ export type field = {
     text: string,
     error: ?string,
 };
+
+export type spreadField = {
+    ...fieldDefinition,
+    ...field,
+};
