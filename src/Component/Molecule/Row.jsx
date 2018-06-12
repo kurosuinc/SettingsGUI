@@ -13,10 +13,10 @@ type Props = {
 const Row = (props: Props) => (
     <TableRow>
         <TableCell>
-            {props.field.key}
+            <Label label={props.field.label}/>
         </TableCell>
         <TableCell>
-            {props.field.text}
+            <TextField {...props.field}/>
         </TableCell>
     </TableRow>
 );

@@ -2,12 +2,10 @@
 import React from 'react';
 import {onlyUpdateForKeys} from 'recompose';
 import _TextField from '@material-ui/core/TextField'
-import type { fieldDefinition } from '../../types/field';
+import type { spreadField } from '../../types/field';
 
 type Props = {
-	fieldData: fieldDefinition,
-	content: string | number,
-	error: ?string;
+    ...spreadField
 };
 
 const onChangeEvent = () => (e: Event) => {
@@ -16,14 +14,15 @@ const onChangeEvent = () => (e: Event) => {
 
 const TextField = (props: Props) => (
 	<_TextField
-		required={props.fieldData.required}
+        fullWidth
+		required={props.required}
 		error={!!props.error}
-		id={props.fieldData.key}
-		label={props.fieldData.label}
-		placeholder={props.fieldData.placeholder}
-		helperText={props.fieldData.description}
-		value={props.content}
+		id={props.key}
+		label={props.label}
+		placeholder={props.placeholder}
+		helperText={props.description}
+		value={props.text}
 		onChange={onChangeEvent()}/>
 );
 
-export default onlyUpdateForKeys(['content', 'error'])(TextField);
+export default onlyUpdateForKeys(['text', 'error'])(TextField);
