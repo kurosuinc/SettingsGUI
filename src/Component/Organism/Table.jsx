@@ -8,13 +8,16 @@ import type {spreadField} from "../../types/field";
 
 type Props = {
     fields: Array<spreadField>,
+    checkText: Function
 };
 
 const Table = (props: Props) => (
     <_Table>
         <Header/>
         <_TableBody>
-            {props.fields.map((item, index) => <Row key={index} field={item}/>)}
+            {props.fields.map((item, index) =>
+                <Row key={index} field={item} checkText={props.checkText}/>
+            )}
         </_TableBody>
     </_Table>
 );

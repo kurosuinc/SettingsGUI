@@ -5,11 +5,15 @@ import _TextField from '@material-ui/core/TextField'
 import type { spreadField } from '../../types/field';
 
 type Props = {
-    ...spreadField
+    ...spreadField,
+    checkText: Function,
 };
 
-const onChangeEvent = () => (e: Event) => {
-	console.log(e.target.value);
+const onChangeEvent = (props: Props) => (e: Object) => {
+	props.checkText({
+        key: props.key,
+        target: e.target.value,
+	});
 };
 
 const TextField = (props: Props) => (
@@ -22,7 +26,7 @@ const TextField = (props: Props) => (
 		placeholder={props.placeholder}
 		helperText={props.description}
 		value={props.text}
-		onChange={onChangeEvent()}/>
+		onChange={onChangeEvent(props)}/>
 );
 
 export default onlyUpdateForKeys(['text', 'error'])(TextField);

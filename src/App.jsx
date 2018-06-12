@@ -10,13 +10,14 @@ import Table from './Component/Organism/Table';
 type Props = {
     fields: Array<Object>,
     initApp: Function,
+    checkText: Function,
 };
 
 type State = {};
 
 class App extends React.PureComponent<Props, State> {
     render() {
-        return <Table fields={this.props.fields}/>;
+        return <Table fields={this.props.fields} checkText={this.props.checkText}/>;
     }
 
     componentDidMount() {
@@ -30,6 +31,7 @@ const mapStateToProps = (state: Object): Object => ({
 
 const mapDispatchToProps = (dispatch: Function): Object => ({
     initApp: bindActionCreators(actions.appActions.requestAppInitialize, dispatch),
+    checkText: bindActionCreators(actions.fieldActions.requestRuleCheck, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

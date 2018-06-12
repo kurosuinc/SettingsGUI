@@ -7,7 +7,8 @@ import TextField from '../Atom/TextField';
 import type { spreadField } from "../../types/field";
 
 type Props = {
-    field: spreadField
+    field: spreadField,
+    checkText: Function,
 }
 
 const Row = (props: Props) => (
@@ -16,7 +17,7 @@ const Row = (props: Props) => (
             <Label label={props.field.label}/>
         </TableCell>
         <TableCell>
-            <TextField {...props.field}/>
+            <TextField {...props.field} checkText={props.checkText}/>
         </TableCell>
     </TableRow>
 );
