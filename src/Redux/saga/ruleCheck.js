@@ -12,8 +12,9 @@ export default function*(action: Object): any {
         });
 
         const rules = yield select((state: Object) => state.Schema[index].rules);
-        const result = rulechecker(rules, target);
-        if(result){
+        const result = yield call(rulechecker, rules, target);
+
+        if(!result){
             yield put({
                 type: types.RULE_CHECK.RULE_CHECK_SUCCEEDED,
                 payload: {
@@ -25,7 +26,7 @@ export default function*(action: Object): any {
                 type: types.RULE_CHECK.RULE_CHECK_FAILED,
                 payload: {
                     index,
-                    error: result,
+                    error: result.errMessage,
                 }
             });
         }
