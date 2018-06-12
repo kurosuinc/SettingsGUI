@@ -21,7 +21,7 @@ export default function*(action: Object): any {
                     index
                 }
             });
-        }else{ //
+        }else{
             yield put({
                 type: types.RULE_CHECK.RULE_CHECK_FAILED,
                 payload: {
