@@ -8,6 +8,9 @@ export type State = Array<field>;
 const initState: State = [];
 
 const reducer = handleActions({
+    [types.RULE_CHECK.UPDATE_FORM_TEXT]: (state: State, action: Object) => (
+        state.map((item, index) => (index === action.payload.index) ? {text: action.payload.target, error: null} : item)
+    ),
     [types.RULE_CHECK.RULE_CHECK_SUCCEEDED]: (state: State, action: Object) => (
         state // TODO
     ),
