@@ -1,9 +1,8 @@
 // @flow
-import { fieldDefinition } from "../types/field";
 import { rule } from '../types/rule';
 
 export default (schema: Array<Object>): Array<Object> => (
-    schema.map((item: Object): fieldDefinition => ({
+    schema.map((item: Object): Object => ({
         field: {
             key: item.key,
             label: item.label,
