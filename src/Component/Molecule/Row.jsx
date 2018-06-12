@@ -8,6 +8,7 @@ import type { spreadField } from "../../types/field";
 
 type Props = {
     field: spreadField,
+    index: number,
     checkText: Function,
 }
 
@@ -17,7 +18,7 @@ const Row = (props: Props) => (
             <Label label={props.field.label}/>
         </TableCell>
         <TableCell>
-            <TextField {...props.field} checkText={props.checkText}/>
+            <TextField field={props.field} index={props.index} checkText={props.checkText}/>
         </TableCell>
     </TableRow>
 );

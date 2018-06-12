@@ -1,17 +1,18 @@
 // @flow
 import React from 'react';
-import {onlyUpdateForKeys} from 'recompose';
+import { onlyUpdateForKeys } from 'recompose';
 import _TextField from '@material-ui/core/TextField'
 import type { spreadField } from '../../types/field';
 
 type Props = {
-    ...spreadField,
+    field: spreadField,
+    index: number,
     checkText: Function,
 };
 
 const onChangeEvent = (props: Props) => (e: Object) => {
 	props.checkText({
-        key: props.key,
+        index: props.index,
         target: e.target.value,
 	});
 };
@@ -19,14 +20,14 @@ const onChangeEvent = (props: Props) => (e: Object) => {
 const TextField = (props: Props) => (
 	<_TextField
         fullWidth
-		required={props.required}
-		error={!!props.error}
-		id={props.key}
-		label={props.label}
-		placeholder={props.placeholder}
-		helperText={props.description}
-		value={props.text}
+		required={props.field.required}
+		error={!!props.field.error}
+		id={props.field.key}
+		label={props.field.label}
+		placeholder={props.field.placeholder}
+		helperText={props.field.description}
+		value={props.field.text}
 		onChange={onChangeEvent(props)}/>
 );
 
-export default onlyUpdateForKeys(['text', 'error'])(TextField);
+export default onlyUpdateForKeys(['field'])(TextField);

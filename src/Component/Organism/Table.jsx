@@ -16,7 +16,7 @@ const Table = (props: Props) => (
         <Header/>
         <_TableBody>
             {props.fields.map((item, index) =>
-                <Row key={index} field={item} checkText={props.checkText}/>
+                <Row key={item.key} index={index} field={item} checkText={props.checkText}/>
             )}
         </_TableBody>
     </_Table>
