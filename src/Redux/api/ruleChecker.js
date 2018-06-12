@@ -7,5 +7,5 @@ export const ruleCheck = (rules: Array<rule>, text: string | number): ?rule => (
 
 export default (rules: Array<rule>, text: string): ?string => {
     const result = ruleCheck(rules, text);
-    return result ? result.text : undefined;
+    return result ? result.errMessage : undefined;
 }
