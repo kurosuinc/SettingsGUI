@@ -9,6 +9,7 @@ import Table from './Component/Organism/ItemList';
 
 type Props = {
     fields: Array<Object>,
+    appName: string,
     initApp: Function,
     checkText: Function,
 };
