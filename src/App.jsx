@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from './Redux/action';
 import * as selectors from './Redux/selector';
 
-import Table from './Component/Organism/Table';
+import Table from './Component/Organism/ItemList';
 
 type Props = {
     fields: Array<Object>,

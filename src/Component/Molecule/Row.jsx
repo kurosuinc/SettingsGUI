@@ -1,8 +1,6 @@
 import React from 'react';
 import { pure } from 'recompose';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
-import Label from '../Atom/Label';
+import ListItem from '@material-ui/core/ListItem';
 import TextField from '../Atom/TextField';
 import type { spreadField } from "../../types/field";
 
@@ -13,14 +11,9 @@ type Props = {
 }
 
 const Row = (props: Props) => (
-    <TableRow>
-        <TableCell>
-            <Label label={props.field.label}/>
-        </TableCell>
-        <TableCell>
-            <TextField field={props.field} index={props.index} checkText={props.checkText}/>
-        </TableCell>
-    </TableRow>
+    <ListItem>
+        <TextField field={props.field} index={props.index} checkText={props.checkText}/>
+    </ListItem>
 );
 
 export default pure(Row);
