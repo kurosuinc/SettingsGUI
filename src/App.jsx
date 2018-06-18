@@ -22,11 +22,13 @@ class App extends React.PureComponent<Props, State> {
 
     componentDidMount() {
         this.props.initApp();
+        document.title = this.props.appName;
     }
 }
 
 const mapStateToProps = (state: Object): Object => ({
     fields: selectors.fields(state),
+    appName: selectors.applicationName(state),
 });
 
 const mapDispatchToProps = (dispatch: Function): Object => ({
