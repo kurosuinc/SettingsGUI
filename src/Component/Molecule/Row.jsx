@@ -1,8 +1,16 @@
 import React from 'react';
+import styled from 'styled-components';
 import { pure } from 'recompose';
 import ListItem from '@material-ui/core/ListItem';
 import TextField from '../Atom/TextField';
+import ErrorMessage from '../Atom/ErrorMessage';
 import type { spreadField } from "../../types/field";
+
+const StyledListItem = styled(ListItem)`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+`;
 
 type Props = {
     field: spreadField,
@@ -11,9 +19,10 @@ type Props = {
 }
 
 const Row = (props: Props) => (
-    <ListItem>
+    <StyledListItem>
         <TextField field={props.field} index={props.index} checkText={props.checkText}/>
-    </ListItem>
+        {props.field.error ? <ErrorMessage message={props.field.error} /> : <div />}
+    </StyledListItem>
 );
 
 export default pure(Row);
