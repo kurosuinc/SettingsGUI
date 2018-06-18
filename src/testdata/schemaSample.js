@@ -32,7 +32,7 @@ export default {
 			required: false,
 			rules: [
 				{
-					regex: '(?<!-)[0-9]*',
+					regex: '[^-]*',
 					error: '負値は指定できません'
 				},
 				{
