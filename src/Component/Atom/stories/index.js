@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 
 import TextField from '../TextField.jsx';
-import MoreInfoIcons from '../MoreInfoIcon';
+import MoreInfoIcons from '../MoreInfoIcon.jsx';
 
 storiesOf('Settings Import Field', module)
 	.add('basic', () => <TextField schema={schemaSampleData.schema[0]}/>);
