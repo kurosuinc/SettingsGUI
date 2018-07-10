@@ -7,6 +7,8 @@ module.exports = class Application {
 		this.mainWindow = new BrowserWindow({
 			width: 1366,
 			height: 768,
+            frame: false,
+            titleBarStyle: 'hidden',
 		});
 		this.startUrl = process.env.ELECTRON_START_URL || url.format({
 			pathname: path.join(__dirname, '/../build/index.html'), // 警告：このファイルを移動する場合ここの相対パスの指定に注意してください
