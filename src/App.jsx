@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from './Redux/action';
 import * as selectors from './Redux/selector';
 
-import Table from './Component/Organism/ItemList';
+import Page from './Component/Page';
 
 type Props = {
     fields: Array<Object>,
@@ -18,7 +18,7 @@ type State = {};
 
 class App extends React.PureComponent<Props, State> {
     render() {
-        return <Table fields={this.props.fields} checkText={this.props.checkText}/>;
+        return <Page fields={this.props.fields} checkText={this.props.checkText} appName={this.props.appName} />
     }
 
     componentDidMount() {
