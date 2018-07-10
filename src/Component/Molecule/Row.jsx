@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { pure } from 'recompose';
 import ListItem from '@material-ui/core/ListItem';
-import TextField from '../Atom/TextField';
-import ErrorMessage from '../Atom/ErrorMessage';
+import TextField from '../Atom/Row/TextField';
+import ErrorMessage from '../Atom/Row/ErrorMessage';
 import type { spreadField } from "../../types/field";
 
 const StyledListItem = styled(ListItem)`

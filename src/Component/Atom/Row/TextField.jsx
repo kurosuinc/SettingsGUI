@@ -2,7 +2,7 @@
 import React from 'react';
 import { onlyUpdateForKeys } from 'recompose';
 import _TextField from '@material-ui/core/TextField'
-import type { spreadField } from '../../types/field';
+import type { spreadField } from '../../../types/field';
 
 type Props = {
     field: spreadField,

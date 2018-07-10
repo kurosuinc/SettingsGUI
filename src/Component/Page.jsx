@@ -30,7 +30,7 @@ type Props = {
 const Page = (props: Props) => (
     <Styled.Root>
         <Styled.Body.Header appName={props.appName} />
-        <ItemList fields={props.fields} checkText={props.checkText} />
+        <Styled.Body.Main fields={props.fields} checkText={props.checkText} />
     </Styled.Root>
 );
 

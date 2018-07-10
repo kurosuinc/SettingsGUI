@@ -4,8 +4,8 @@ import {pure} from 'recompose';
 import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import AppName from '../Atom/Header/AppName';
+import SaveButton from '../Atom/Header/SaveButton';
 
 const Styled = {
     AppBar: styled(AppBar)`
@@ -17,18 +17,6 @@ const Styled = {
         display: flex;
         justify-content: space-between;
     `,
-    Title: styled(Typography)`
-        padding-left: 46px;
-        -webkit-app-region: drag;
-        -webkit-user-select: none;
-        cursor: default;
-    `,
-    Button: styled(Button)`
-        -webkit-app-region: no-drag;
-        color: whitesmoke !important;
-        border-color: whitesmoke !important;
-        font-size: 16px;
-    `,
 };
 
 type Props = {
@@ -38,8 +26,8 @@ type Props = {
 const WindowAppBar = (props: Props) => (
     <Styled.AppBar position={"static"}>
         <Styled.Toolbar>
-            <Styled.Title variant="title" color="inherit">{props.appName}</Styled.Title>
-            <Styled.Button variant="outlined">{"保存"}</Styled.Button>
+            <AppName appName={props.appName} />
+            <SaveButton/>
         </Styled.Toolbar>
     </Styled.AppBar>
 );
