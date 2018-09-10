@@ -1,4 +1,4 @@
-const application = require('./application');
+let application = require('./application');
 
 global.application = new application();
 global.application.run();
